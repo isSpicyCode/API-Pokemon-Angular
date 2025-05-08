@@ -1,59 +1,67 @@
-# FirstInstall
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
 
-## Development server
+# My Pokémon Project with Angular - Summary
 
-To start a local development server, run:
+## What I'm doing
+I'm developing a web application that displays information about Pokémon using Angular and a public Pokémon API.
 
-```bash
-ng serve
-```
+## Technologies used
+- Angular (JavaScript framework)
+- HTML/CSS
+- Pokémon API (pokeapi.co)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Simple features
+- View a list of Pokémon
+- Click on a Pokémon to see its details
+- Search for a Pokémon by name
 
-## Code scaffolding
+## How I built it
+1. I installed Angular with Angular CLI
+2. I created components to display the Pokémon
+3. I used services to fetch data from the API
+4. I added styling to make the application look nice
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## What I learned
+- How to use Angular for the first time
+- How to make API calls
+- How to structure a web project
+- How to display dynamic data on a page
 
-```bash
-ng generate component component-name
-```
+## Next steps
+- Add more features
+- Improve the design
+- Learn how to deploy my application
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
 
-## Building
+# Mon Projet Pokémon avec Angular - Résumé
 
-To build the project run:
+## Ce que je fais
+Je développe une application web qui affiche des informations sur les Pokémon en utilisant Angular et une API Pokémon publique.
 
-```bash
-ng build
-```
+## Technologies utilisées
+- Angular (framework JavaScript)
+- HTML/CSS
+- API Pokémon (pokeapi.co)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Fonctionnalités simples
+- Voir une liste de Pokémon
+- Cliquer sur un Pokémon pour voir ses détails
+- Chercher un Pokémon par nom
 
-## Running unit tests
+## Comment je l'ai construit
+1. J'ai installé Angular avec Angular CLI
+2. J'ai créé des composants pour afficher les Pokémon
+3. J'ai utilisé des services pour récupérer les données depuis l'API
+4. J'ai ajouté du style pour rendre l'application jolie
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Ce que j'ai appris
+- Comment utiliser Angular pour la première fois
+- Comment faire des appels API
+- Comment structurer un projet web
+- Comment afficher des données dynamiques sur une page
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Prochaines étapes
+- Ajouter plus de fonctionnalités
+- Améliorer le design
+- Apprendre à déployer mon application
