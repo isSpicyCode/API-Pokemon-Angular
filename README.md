@@ -1,6 +1,10 @@
 
-
 # My Pokémon Project with Angular - Summary
+
+![pokemon](/public/img/pokemon.png)
+
+## Website
+Visit the live application: [https://pokemon-318ff.web.app/](https://pokemon-318ff.web.app/)
 
 ## What I'm doing
 I'm developing a web application that displays information about Pokémon using Angular and a public Pokémon API.
@@ -8,6 +12,7 @@ I'm developing a web application that displays information about Pokémon using 
 ## Technologies used
 - Angular (JavaScript framework)
 - HTML/CSS
+- Tailwind CSS
 - Pokémon API (pokeapi.co)
 
 ## Simple features
@@ -36,12 +41,16 @@ I'm developing a web application that displays information about Pokémon using 
 
 # Mon Projet Pokémon avec Angular - Résumé
 
+## Site Web
+Visitez l'application en ligne : [https://pokemon-318ff.web.app/](https://pokemon-318ff.web.app/)
+
 ## Ce que je fais
 Je développe une application web qui affiche des informations sur les Pokémon en utilisant Angular et une API Pokémon publique.
 
 ## Technologies utilisées
 - Angular (framework JavaScript)
 - HTML/CSS
+- Tailwind CSS
 - API Pokémon (pokeapi.co)
 
 ## Fonctionnalités simples
