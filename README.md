@@ -41,8 +41,6 @@ I'm developing a web application that displays information about Pokémon using 
 
 # Mon Projet Pokémon avec Angular - Résumé
 
-## Site Web
-Visitez l'application en ligne : [https://pokemon-318ff.web.app/](https://pokemon-318ff.web.app/)
 
 ## Ce que je fais
 Je développe une application web qui affiche des informations sur les Pokémon en utilisant Angular et une API Pokémon publique.
