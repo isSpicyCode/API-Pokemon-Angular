@@ -1,5 +1,6 @@
 import { Component, signal, computed } from '@angular/core';
 import { POKEMON_LIST } from './pokemon-list';
+import { Pokemon } from './pokemon.model';
 
 @Component({
   selector: 'app-root',
@@ -10,18 +11,15 @@ import { POKEMON_LIST } from './pokemon-list';
 
 export class AppComponent {
   PokemonList = POKEMON_LIST;
-  name = signal("Pikachu");
-  life = signal(21);
-  taillePokemon = computed(() => {
-    if(this.life() < 15) return "petit";
-    if(this.life() > 25) return "grand";
-    return "moyen";
-  });
-  imageUrl = signal('img/025.png')
-  decrementLife(){
-    this.life.update((life) => life - 1)
+  size(pokemon: Pokemon) {
+    if(pokemon.life < 15) return "petit"
+    if(pokemon.life > 25) return "grand"
+    return "moyen"
   }
-  incrementLife(){
-    this.life.update((life) => life + 1)
+  decrementLife(pokemon: Pokemon){
+    pokemon.life = pokemon.life - 1
+  }
+  incrementLife(pokemon: Pokemon){
+    pokemon.life = pokemon.life + 1
   }
 }
