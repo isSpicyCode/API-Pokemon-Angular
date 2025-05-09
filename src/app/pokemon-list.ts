@@ -47,7 +47,7 @@ export const POKEMON_LIST: PokemonList = [
      damage: 7,
      picture:
        'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/016.png',
-     types: ['Normal', 'Vol'],
+     types: ['Insecte', 'Vol'],
      created: new Date(),
    },
    {
@@ -57,7 +57,7 @@ export const POKEMON_LIST: PokemonList = [
      damage: 6,
      picture:
        'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png',
-     types: ['Normal'],
+     types: ['Poison2'],
      created: new Date(),
    },
    {
@@ -67,7 +67,7 @@ export const POKEMON_LIST: PokemonList = [
      damage: 5,
      picture:
        'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/021.png',
-     types: ['Normal', 'Vol'],
+     types: ['Insecte', 'Vol'],
      created: new Date(),
    },
    {
@@ -97,7 +97,7 @@ export const POKEMON_LIST: PokemonList = [
      damage: 3,
      picture:
        'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/027.png',
-     types: ['Normal'],
+     types: ['Yellow'],
      created: new Date(),
    },
    {
@@ -112,12 +112,12 @@ export const POKEMON_LIST: PokemonList = [
    },
    {
      id: 12,
-     name: 'Groupix',
+     name: 'Goupix',
      life: 17,
      damage: 8,
      picture:
        'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/037.png',
-     types: ['Feu'],
+     types: ['Feu2'],
      created: new Date(),
    },
  ];
