@@ -4,7 +4,7 @@ import { Directive, ElementRef, HostListener, input } from '@angular/core';
   selector: '[appPokemonBorder]',
 })
 export class PokemonBorderDirective {
-  private initialColor: string;
+  private readonly initialColor: string;
   pokemonType = input.required<string>()
 
   constructor(private el: ElementRef) {

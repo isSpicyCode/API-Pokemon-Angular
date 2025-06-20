@@ -1,3 +1,6 @@
 {
-  "codium.codeCompletion.enable": true
+  "codium.codeCompletion.enable": true,
+  "CodeGPT.apiKey": "Ollama",
+  "tabby.config.telemetry": true,
+  "tabby.endpoint": "http://localhost:8081"
 }

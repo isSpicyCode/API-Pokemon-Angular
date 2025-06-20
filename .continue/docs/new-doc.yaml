@@ -1,0 +1,6 @@
+name: New doc
+version: 0.0.1
+schema: v1
+docs:
+  - name: javascript 1
+    startUrl: file:///home/spicycode/Documents/Document%20Dev/js1b.txt

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "angular": {
+      "url": "https://gitmcp.io/angular/angular",
+      "type": "sse",          // Remplacez "transportType" par "type"
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

@@ -1,0 +1,55 @@
+<div class="max-w-screen-xl mx-auto px-4 mb-6">
+    <form class="flex justify-center">
+      <input type="text" placeholder="Rechercher un Pokemon..." id="search"
+      name="searchTerm" #searchField [value]="searchTerm()"
+      (input)="searchTerm.set(searchField.value)"
+      class="w-[500px] p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#f4d77c] focus:border-transparent text-zinc-50">
+    </form>
+  </div>
+
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4 max-w-screen-xl m-auto"
+  >
+    @for (pokemon of pokemonListFiltered(); track pokemon.id) {
+    <div
+      class="bg-neutral-700 rounded-lg flex items-center p-4 gap-4 shadow-md"
+      appPokemonBorder
+      [pokemonType]="pokemon.types[0]"
+    >
+      <img
+        [src]="pokemon.picture"
+        [alt]="pokemon.name"
+        class="w-28 h-28 object-contain"
+      />
+      <div class="flex flex-col flex-1">
+        <h2 class="text-lg text-zinc-300 font-medium mb-1">{{ pokemon.name }}</h2>
+        <p class="text-zinc-300 text-sm">Taille : {{ size(pokemon) }}</p>
+        <p class="text-zinc-300 text-sm">
+          {{ pokemon.created | date : "dd/MM/yyyy" }}
+        </p>
+        <p class="text-zinc-300 text-sm mb-2">
+          Points de vie : {{ pokemon.life }}
+        </p>
+        <div class="flex gap-1">
+          <button
+            (click)="decrementLife(pokemon)"
+            [disabled]="pokemon.life < 10"
+            class="bg-zinc-800 text-neutral-700 font-medium text-xl px-[14px] py-[1px] rounded hover:bg-zinc-500 hover:text-zinc-100 transition duration-300 disabled:opacity-50"
+          >
+            -
+          </button>
+          <button
+            (click)="incrementLife(pokemon)"
+            [disabled]="pokemon.life > 30"
+            class="bg-zinc-800 text-neutral-700 font-medium text-xl px-[12px] py-[1px] rounded hover:bg-zinc-500 hover:text-zinc-100 transition duration-300 disabled:opacity-50"
+          >
+            +
+          </button>
+        </div>
+        <p class="text-zinc-50 text-sm mt-2 flex justify-end">
+          <a [routerLink]="['/pokemon', pokemon.id]">Voir</a>
+        </p>
+      </div>
+    </div>
+    }
+  </div>

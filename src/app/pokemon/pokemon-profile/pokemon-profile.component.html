@@ -1,0 +1,63 @@
+<h1 class="text-center text-3xl font-semibold my-6">
+  Pokémon&nbsp;: {{ pokemon().name }}
+</h1>
+<div class="mx-auto max-w-4xl px-4 mt-12">
+  <div class="bg-neutral-700 rounded-xl shadow-md">
+    <div class="flex flex-col md:flex-row gap-0">
+      <div class="w-full md:w-1/3 flex items-center justify-center bg-[--muted-bg] rounded-l-xl p-6">
+        <img
+          [src]="pokemon().picture"
+          class="w-full h-auto rounded-l-xl"
+          [alt]="pokemon().name"
+        />
+      </div>
+      <div class="w-full md:w-2/3">
+        <div class="p-6">
+          <h2 class="text-2xl font-bold mb-4">{{ pokemon().name }}</h2>
+          <table class="w-full text-left border-separate border-spacing-y-2">
+            <tbody>
+            <tr>
+              <th class="pr-4 py-2 font-medium text-[--muted-foreground]">Points de vie</th>
+              <td class="py-2">{{ pokemon().life }}</td>
+            </tr>
+            <tr>
+              <th class="pr-4 py-2 font-medium text-[--muted-foreground]">Dégâts</th>
+              <td class="py-2">{{ pokemon().damage }}</td>
+            </tr>
+            <tr>
+              <th class="pr-4 py-2 font-medium text-[--muted-foreground]">Types</th>
+              <td class="py-2">
+                @for(type of pokemon().types; track type) {
+                  <span class="inline-block px-2 py-1 rounded-full bg-[--secondary] text-[--secondary-foreground] mr-1 text-xs font-semibold">
+                      {{ type }}
+                    </span>
+                }
+              </td>
+            </tr>
+            <tr>
+              <th class="pr-4 py-2 font-medium text-[--muted-foreground]">Date de création</th>
+              <td class="py-2">
+                {{ pokemon().created | date : 'dd/MM/yyyy' }}
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="flex justify-between mt-8">
+            <button
+              class="text-[--warning] hover:underline focus:outline-none font-semibold"
+              routerLink="/pokemon"
+              type="button">RETOUR
+            </button>
+            <button class="text-[--warning] hover:underline focus:outline-none font-semibold"
+                    [routerLink]="['/pokemon/edit', pokemon().id]"
+                    type="button">ÉDITER
+            </button>
+            <button class="text-[--warning] hover:underline focus:outline-none font-semibold"
+                    type="button">SUPPRIMER
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
