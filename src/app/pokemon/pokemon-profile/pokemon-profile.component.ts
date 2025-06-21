@@ -15,3 +15,4 @@ export class PokemonProfileComponent {
   readonly #pokemonId = Number(this.#route.snapshot.paramMap.get('id'));
   readonly pokemon = signal(this.#pokemonService.getPokemonById(this.#pokemonId));
 }
+
