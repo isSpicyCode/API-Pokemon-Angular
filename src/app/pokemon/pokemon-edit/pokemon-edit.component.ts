@@ -1,12 +1,25 @@
-import { Component } from '@angular/core';
-import {RouterLink} from '@angular/router';
+import {Component, inject, signal} from '@angular/core';
+import {ActivatedRoute, RouterLink} from '@angular/router';
+import {PokemonService} from '../../pokemon.service';
+import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-pokemon-edit',
-  imports: [RouterLink],
+  imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './pokemon-edit.component.html',
   styleUrl: './pokemon-edit.component.scss'
 })
 export class PokemonEditComponent {
+  readonly route = inject(ActivatedRoute); /* injection de la route */
+  readonly pokemonService = inject(PokemonService); /* injection du pokemon service */
+  readonly pokemonId = Number(this.route.snapshot.paramMap.get('id')); /* récupère pokemon id */
+  readonly pokemon = signal(this.pokemonService.getPokemonById(this.pokemonId)).asReadonly();
+  /* Lire dans le service pokemon qui a l'id 1 */
 
+  readonly pokemonForm = new FormGroup({
+    name: new FormControl(this.pokemon().name),
+    life: new FormControl(this.pokemon().life),
+    damage: new FormControl(this.pokemon().damage),
+    types: new FormArray(this.pokemon().types.map(type => new FormControl(type))),
+  });
 }

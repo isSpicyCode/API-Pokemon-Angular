@@ -1,1 +1,125 @@
-<p>pokemon-edit works!</p>
+<div class="max-w-3xl mx-auto mt-20">
+  <div class="bg-neutral-700  rounded-lg shadow overflow-hidden">
+    <div class="flex flex-col md:flex-row">
+      <div class="md:w-1/3 flex items-center justify-center bg-neutral-700 p-6">
+        <img
+          [src]="pokemon().picture"
+          class="w-full h-auto rounded-l-lg object-contain"
+          [alt]="pokemon().name"
+        />
+      </div>
+      <div class="md:w-2/3 w-full">
+        <form [formGroup]="pokemonForm">
+          <div class="p-6 space-y-6">
+            <h2 class="text-2xl font-bold mb-4">{{ pokemon().name }}</h2>
+            <div class="space-y-4">
+              <!-- Name -->
+              <div class="grid grid-cols-3 items-center gap-4">
+                <label class="font-semibold col-span-1">Name</label>
+                <input
+                  FormControlName="name"
+                  type="text"
+                  class="border rounded px-3 py-2 w-full col-span-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                  [value]="pokemon().name"
+                  placeholder="Nom du Pokémon"
+                />
+              </div>
+              <!-- Life -->
+              <div class="grid grid-cols-3 items-center gap-4">
+                <label class="font-semibold col-span-1">Points de vie</label>
+                <div class="flex col-span-2">
+                  <button
+                    class="bg-gray-200 text-gray-700 rounded-l px-3 py-2 cursor-not-allowed"
+                    disabled
+                  >
+                    -
+                  </button>
+                  <input
+                    FormControlName="life"
+                    type="number"
+                    class="border-t border-b w-20 text-center px-2 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                    [value]="pokemon().life"
+                  />
+                  <button
+                    class="bg-gray-200 text-gray-700 rounded-r px-3 py-2 cursor-not-allowed"
+                    disabled
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <!-- Damage -->
+              <div class="grid grid-cols-3 items-center gap-4">
+                <label class="font-semibold col-span-1">Dégâts</label>
+                <div class="flex col-span-2">
+                  <button
+                    class="bg-gray-200 text-gray-700 rounded-l px-3 py-2 cursor-not-allowed"
+                    disabled
+                  >
+                    -
+                  </button>
+                  <input
+                    FormControlName="damage"
+                    type="number"
+                    class="border-t border-b w-20 text-center px-2 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                    [value]="pokemon().damage"
+                  />
+                  <button
+                    class="bg-gray-200 text-gray-700 rounded-r px-3 py-2 cursor-not-allowed"
+                    disabled
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <!-- Types -->
+              <div>
+                <label class="font-semibold block mb-2">Types</label>
+                <div class="flex flex-wrap gap-2 mb-3">
+                  @for(type of pokemon().types; track type) {
+                    <button
+                      type="button"
+                      class="bg-[#f4d77c] text-xs text-[#91614a] font-semibold rounded-full px-3 py-1 flex items-center gap-1"
+                    >
+                      {{ type }}
+                      <span class="ml-1 bg-[#91614a] text-[#f4d77c] rounded-full px-1 text-[10px] cursor-pointer">x</span>
+                    </button>
+                  }
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                  @for(type of pokemonService.getPokemonTypeList(); track type) {
+                    <div class="flex items-center space-x-2">
+                      <input
+                        class="accent-[#f4d77c] rounded focus:ring-indigo-400"
+                        type="checkbox"
+                        [value]="type"
+                        [id]="type"
+                      />
+                      <label class="text-sm" [for]="type">
+                        {{ type }}
+                      </label>
+                    </div>
+                  }
+                </div>
+              </div>
+            </div>
+            <!-- Actions -->
+            <div class="flex justify-between mt-6">
+              <button
+                class="text-[#f4d77c] font-semibold hover:underline"
+                [routerLink]="['/pokemon', pokemon().id]"
+              >
+                RETOUR
+              </button>
+              <button
+                class="text-[#f4d77c] font-semibold hover:underline"
+              >
+                SAUVEGARDER LES CHANGEMENTS
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
