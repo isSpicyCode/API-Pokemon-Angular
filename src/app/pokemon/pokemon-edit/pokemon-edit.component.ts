@@ -3,6 +3,7 @@ import {ActivatedRoute, RouterLink} from '@angular/router';
 import {PokemonService} from '../../pokemon.service';
 import {FormArray, FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {JsonPipe} from '@angular/common';
+import {getPokemonColor} from '../../pokemon.model';
 
 @Component({
   selector: 'app-pokemon-edit',
@@ -39,6 +40,14 @@ export class PokemonEditComponent {
       const index = this.pokemonTypeList.controls.map(control => control.value).indexOf(type);
       this.pokemonTypeList.removeAt(index);
     }
+  }
+
+  getPokemonColor(type: string) {
+    return getPokemonColor(type);
+}
+
+  getChipBackgroundColor(type: string) {
+    return type === 'Electrik' ? '#222' : '#fff';
   }
 
   onSubmit(){
